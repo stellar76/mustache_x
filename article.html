@@ -1,0 +1,51 @@
+<!DOCtype="html">
+<html lang="en">
+
+<head>
+    <title>
+        {{title}}
+    </title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body class="animated fadeIn">
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+            </div>
+            <div class="col-lg-8">
+                <div class="templateLoader2">
+                </div>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+    </div>
+    <script type="template" id="template2">
+        <h1>{{title}}</h1>
+        <p>
+            {{content}}
+        </p>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        //
+        var p_url = 'http://104.207.128.244/wp-json/wp/v2/posts/';
+        var p_id = getParameterByName('id');
+        //
+        loadArticle(p_url + p_id, '#template2', '.templateLoader2');
+    </script>
+</body>

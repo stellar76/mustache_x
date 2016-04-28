@@ -1,0 +1,70 @@
+[{
+    "id": 1,
+    "track": "Not Gonna Let You Down",
+    "album": "Building 429",
+    "artist": "Building 429",
+    "genres": {
+        "genre": "Rock"
+    }
+    "artist_img": "https://s3.amazonaws.com/r-n-d/artists/building429.png",
+    "album_img": "https://s3.amazonaws.com/r-n-d/albums/building429.jpg",
+    "listens": 1031054
+}, {
+    "id": 2,
+    "track": "I Heard The Bells On Christmas Day",
+    "album": "Peace On Earth",
+    "artist": "Casting Crowns",
+    "genres": {
+        "genre": "Contemporary",
+        "genre": "Christmas"
+    }
+    "artist_img": "https://s3.amazonaws.com/r-n-d/artists/castingcrowns.png",
+    "album_img": "https://s3.amazonaws.com/r-n-d/albums/building429.jpg",
+    "listens": 8781
+}, {
+    "id": 3,
+    "track": "City On Our Knees",
+    "album": "Tonight",
+    "artist": "Toby Mac",
+    "genres": {
+        "genre": "Rock",
+        "genre": "Hip Hop"
+    }
+    "artist_img": "https://s3.amazonaws.com/r-n-d/artists/tobymac.png",
+    "album_img": "https://s3.amazonaws.com/r-n-d/albums/tobymac.jpg",
+    "listens": 929990
+}, {
+    "id": 4,
+    "track": "We Wish You A Merry Christmas",
+    "album": "Campfire Christmas",
+    "artist": "Janice Simmons",
+    "genres": {
+        "genre": "Worship",
+        "genre": "Christmas"
+    }
+    "artist_img": "https://s3.amazonaws.com/r-n-d/artists/rendcollective.png",
+    "album_img": "https://s3.amazonaws.com/r-n-d/albums/rendcollective.jpg",
+    "listens": 1062465
+}, {
+    "id": 5,
+    "track": "How Great Is Our Lord",
+    "album": "Arriving",
+    "artist": "Chris Tomlin",
+    "genres": {
+        "genre": "Worship"
+    }
+    "artist_img": "https://s3.amazonaws.com/r-n-d/artists/christomlin.png",
+    "album_img": "https://s3.amazonaws.com/r-n-d/albums/christomlin.jpg",
+    "listens": 167372
+}, {
+    "id": 6,
+    "track": "I Am",
+    "album": "I Am",
+    "artist": "Crowder",
+    "genres": {
+        "genre": "Worship"
+    }
+    "artist_img": "https://s3.amazonaws.com/r-n-d/artist/crowder.png",
+    "album_img": "https://s3.amazonaws.com/r-n-d/albums/crowder.jpg",
+    "listens": 504997
+}]

@@ -1,0 +1,75 @@
+<!DOCtype="html">
+<html lang="en">
+
+<head>
+    <title>
+        stuff
+    </title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+  <ul class="list-group">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+  <br />
+    <ul class="list-group templateLoader">
+    </ul>
+    <script type="template" id="template">
+        <li class="list-group-item">
+            <h4>{{title}}</h4>
+            <p>
+              {{href}}
+            </p>
+            <a href="page.html?id={{postid}}&title={{safelink}}">Continue Reading ></a>
+        </li>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        var get_data = function(api_url) {
+                var json = null;
+                $.ajax({
+                    'async': false,
+                    'global': false,
+                    'url': api_url,
+                    'dataType': "json",
+                    'success': function(data) {
+                        json = data;
+                    }
+                });
+                return json;
+            }
+            //
+        getSections = function() {
+            lastestStories = function(api, template, view) {
+                var data = get_data(api);
+                console.log(data);
+                c_template = document.querySelector(template).innerHTML;
+                result = document.querySelector(view);
+                i = 0, len = data.length;
+                temp = '';
+                console.log(c_template);
+                for (; i < len; i++) {
+                    temp += c_template
+                        .replace(/\{\{title\}\}/, data[i].title.rendered)
+                        .replace(/\{\{href\}\}/, data[i].excerpt.rendered)
+                        .replace(/\{\{postid\}\}/, data[i].id)
+                        .replace(/\{\{safelink\}\}/, data[i].title.rendered.replace(/\s+/g, '_'));
+                }
+                result.innerHTML = temp;
+            }
+            lastestStories('http://104.207.128.244/wp-json/wp/v2/posts', '#template', '.templateLoader');
+            //
+
+        }
+        getSections();
+    </script>
+</body>
