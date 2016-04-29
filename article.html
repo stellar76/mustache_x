@@ -23,12 +23,6 @@
             </div>
         </div>
     </div>
-    <script type="template" id="template2">
-        <h1>{{title}}</h1>
-        <p>
-            {{content}}
-        </p>
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
@@ -46,6 +40,6 @@
         var p_url = 'http://104.207.128.244/wp-json/wp/v2/posts/';
         var p_id = getParameterByName('id');
         //
-        loadArticle(p_url + p_id, '#template2', '.templateLoader2');
+        loadArticle(p_url + p_id, '.templateLoader2');
     </script>
 </body>

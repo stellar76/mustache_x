@@ -11,9 +11,13 @@ var get_data = function(api_url) {
     });
     return json;
 }
-lastestStories = function(api, template, view) {
+lastestStories = function(api, view) {
+    template = {
+        markup: '<li class="list-group-item"><h4>{{title}}</h4><p>{{href}}</p><a href="article.html?id={{postid}}&title={{safelink}}">Continue Reading</a></li>'
+    }
+    console.log(template.markup);
     var data = get_data(api);
-    c_template = document.querySelector(template).innerHTML;
+    c_template = template.markup;
     result = document.querySelector(view);
     i = 0, len = data.length;
     temp = '';
@@ -28,14 +32,14 @@ lastestStories = function(api, template, view) {
 }
 
 //
-loadArticle = function(api, template, view) {
-        console.log(api, template, view)
-        var data = get_data(api);
-        var c_template = document.querySelector(template).innerHTML;
-        result = document.querySelector(view);
-        temp = '';
-        temp = c_template.replace(/\{\{title\}\}/, data.title.rendered ).replace(/\{\{content\}\}/, data.content.rendered);
-        console.log(temp);
-        result.innerHTML = temp;
+loadArticle = function(api, view) {
+    template = {
+      markup: '<h1>{{title}}</h1><p>{{content}}</p>'
     }
-    //
+    var data = get_data(api);
+    var c_template = template.markup;
+    result = document.querySelector(view);
+    temp = '';
+    temp = c_template.replace(/\{\{title\}\}/, data.title.rendered).replace(/\{\{content\}\}/, data.content.rendered);
+    result.innerHTML = temp;
+}
